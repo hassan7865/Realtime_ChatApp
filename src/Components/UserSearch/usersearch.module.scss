@@ -1,0 +1,118 @@
+@mixin mobile{
+    @media screen and (min-width:320px) and (max-width: 480px){
+        @content;
+    }
+    }
+@mixin tablet{
+    @media screen and (min-width:480px) and (max-width:780px) {
+        @content
+     }   
+}
+@mixin Laptop{
+    @media screen and (min-width:780px) and (max-width:1080px){
+        @content;
+    }
+}
+.Container{
+    position: absolute;
+    display: flex;
+    background-color:rgba(0,0,0,0.6);
+    top: 0;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;    
+    .Wrapper{
+        background-color: rgb(54, 54, 177);
+        height: 150px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px; 
+        padding: 10px;
+        position: relative;
+        flex-direction: column;
+        @include mobile(){
+            width: 260px;
+        }
+        form{
+            width: 100%;
+            button{
+            background-color: transparent;
+                display: flex;
+                align-items: center;
+                color: white;
+                font-size: 20px;
+                border: none;
+                
+            }
+        }
+        .Cross{
+            position:absolute;
+            padding: 5px 10px 5px 10px;
+            font-size: 20px;
+            color: white;
+            left:0;
+            top:0;
+        }
+        .Search{
+           
+            font-size: 23px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background-color:rgb(28, 28, 122) ;
+            height: 30px;
+            color: white;
+            border-radius: 5px;
+            input{
+                height: 100%;
+                color: white;
+                background-color: transparent;
+                width: 92%;
+                border: none;
+                outline: none;
+                padding-left: 10px;
+            }
+            .Icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+          
+    }
+    .Find{
+        display: flex;
+        color: white;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 10px;
+        gap: 10px;
+        img{
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .ReqIcon{
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    }
+    animation: fadeInRight 200ms ease;
+    @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(5vw);
+        }
+        to {
+            opacity: 1;
+          transform: translateX(0vw);
+        }
+      }
+    }
+}

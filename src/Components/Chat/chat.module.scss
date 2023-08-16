@@ -1,0 +1,79 @@
+@mixin mobile{
+    @media screen and (min-width:320px) and (max-width: 480px){
+        @content;
+    }
+    }
+@mixin tablet{
+    @media screen and (min-width:480px) and (max-width:780px) {
+        @content
+     }   
+}
+@mixin Laptop{
+    @media screen and (min-width:780px) and (max-width:1080px){
+        @content;
+    }
+}
+.Container{
+    display: flex;
+    padding: 0 10px 0px 10px;
+    margin: 25px 0px 25px 0px;
+    gap: 20px;
+    @include mobile(){
+        gap: 10px;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-weight: 300;
+        .image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            @include mobile(){
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .time{
+            font-size: 12px;
+            margin-left: 5px;
+        }
+    }
+    .messageContent{
+        max-width: 80%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        @include mobile(){
+            max-width: 68%;
+        }
+        @include tablet(){
+            max-width: 68%;
+        }
+            .Text{
+                background-color: white;
+                padding: 10px;
+                border-radius: 0px 10px 10px 10px;
+                width: 100%;
+                height: 100%;
+                word-break:break-all;
+                @include mobile(){
+                   padding: 7px;
+                   font-size: 12px;
+                }
+            }
+        }
+    &.owner{
+        flex-direction: row-reverse;
+        .messageContent{
+            align-items: flex-end;
+        .Text{
+        border-radius: 10px 0px 10px 10px;
+        max-width: max-content;
+        }
+    }
+    }
+}
